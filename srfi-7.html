@@ -68,13 +68,13 @@ rationale for the need for some kind of configuration control.
      | (feature-cond &lt;feature-cond clause&gt;* (else &lt;program clause&gt;+))
 
  &lt;feature-cond clause&gt;
-   --&gt; (&lt;implementation requirement&gt; &lt;program clause&gt;+)
+   --&gt; (&lt;feature requirement&gt; &lt;program clause&gt;+)
 
- &lt;implementation requirement&gt;
+ &lt;feature requirement&gt;
    --&gt; &lt;feature identifier&gt;
-     | (and &lt;implementation requirement&gt;*)
-     | (or &lt;implementation requirement&gt;*)
-     | (not &lt;implementation requirement&gt;)
+     | (and &lt;feature requirement&gt;*)
+     | (or &lt;feature requirement&gt;*)
+     | (not &lt;feature requirement&gt;)
 
  &lt;feature identifier&gt;
    --&gt; a symbol which is the name of a SRFI
