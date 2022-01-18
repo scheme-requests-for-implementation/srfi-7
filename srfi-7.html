@@ -59,24 +59,24 @@ rationale for the need for some kind of configuration control.
 <H2>Syntax</H2>
 
 <p>
-<pre>
+<pre id="program">
  &lt;program&gt; --&gt; (program &lt;program clause&gt;+)
 
  &lt;program clause&gt;
-   --&gt; (requires &lt;feature identifier&gt;+)
+   --&gt; (<span id="requires">requires</span> &lt;feature identifier&gt;+)
      | (files &lt;filename&gt;*)
-     | (code &lt;Scheme expression, definition, or syntax definition&gt;*)
-     | (feature-cond &lt;feature-cond clause&gt;+)
-     | (feature-cond &lt;feature-cond clause&gt;* (else &lt;program clause&gt;+))
+     | (<span id="code">code</span> &lt;Scheme expression, definition, or syntax definition&gt;*)
+     | (<span id="feature-cond">feature-cond</span> &lt;feature-cond clause&gt;+)
+     | (feature-cond &lt;feature-cond clause&gt;* (<span id="else">else</span> &lt;program clause&gt;+))
 
  &lt;feature-cond clause&gt;
    --&gt; (&lt;feature requirement&gt; &lt;program clause&gt;+)
 
  &lt;feature requirement&gt;
    --&gt; &lt;feature identifier&gt;
-     | (and &lt;feature requirement&gt;*)
-     | (or &lt;feature requirement&gt;*)
-     | (not &lt;feature requirement&gt;)
+     | (<span id="and">and</span> &lt;feature requirement&gt;*)
+     | (<span id="or">or</span> &lt;feature requirement&gt;*)
+     | (<span id="not">not</span> &lt;feature requirement&gt;)
 
  &lt;feature identifier&gt;
    --&gt; a symbol which is the name of a SRFI
