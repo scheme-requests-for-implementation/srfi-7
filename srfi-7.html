@@ -1,22 +1,19 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//EN">
-<html>
+<html lang="en">
 <head>
    <title>SRFI 7: Feature-based program configuration language</title>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <link rel="stylesheet" href="/srfi.css" type="text/css" />
+   <link rel="stylesheet" href="https://srfi.schemers.org/srfi.css" type="text/css" />
+   <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png">
 </head>
 <body>
 
-<H1>Title</H1>
+<h1><a href="https://srfi.schemers.org/"><img class="srfi-logo" src="https://srfi.schemers.org/srfi-logo.svg" alt="SRFI surfboard logo" /></a>7: Feature-based program configuration language</h1>
 
-Feature-based program configuration language
+<p>by Richard Kelsey</p>
 
-<H1>Author</H1>
-
-Richard Kelsey
-
-<H1>Status</H1>
+<h2>Status</h2>
 
 <p>This SRFI is currently in <em>final</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+7+at+srfi+dotschemers+dot+org">srfi-7@<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-7">archive</a>.</p>
 <UL>
@@ -25,7 +22,7 @@ Richard Kelsey
 <LI>Final: 1999-08-19
 </UL>
 
-<H1>Abstract</H1>
+<h2>Abstract</h2>
 
 <p>
 This SRFI describes a configuration language to be used for specifying
@@ -40,7 +37,7 @@ The configuration language is entirely distinct from Scheme; it is
 neither embedded in Scheme nor includes Scheme as a subset.
 </p>
 
-<H1>Rationale</H1>
+<h2>Rationale</h2>
 
 <p>
 The use of a separate configuration language makes it easy for
@@ -54,9 +51,9 @@ in the program.
 rationale for the need for some kind of configuration control.
 </p>
 
-<H1>Specification</H1>
+<h2>Specification</h2>
 
-<H2>Syntax</H2>
+<h3>Syntax</h3>
 
 <p>
 <pre id="program">
@@ -83,7 +80,7 @@ rationale for the need for some kind of configuration control.
 </pre>
 </p>
 
-<H2>Semantics</H2>
+<h3>Semantics</h3>
 <p>
 The configuration language is distinct from Scheme.  Given a set of
 available features a <code>&lt;program&gt;</code> can be converted into a
@@ -160,7 +157,7 @@ The meaning of the <code>&lt;implementation requirement&gt;</code>s is as follow
 
 </dl>
 
-<H1>Implementation</H1>
+<h2>Implementation</h2>
 
 <p> Two implementations are provided here.  The first is a
 <code>PROCESS-PROGRAM</code> function that converts a
@@ -298,7 +295,7 @@ evaluation environment.
             (program more ...)))))
 </pre></p>
 
-<H1>Copyright</H1>
+<h2>Copyright</h2>
 
 Copyright (C) Richard Kelsey (1999). All Rights Reserved.
 <p>
