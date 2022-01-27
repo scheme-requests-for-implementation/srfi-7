@@ -1,11 +1,11 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//EN">
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 3.2//EN" "http://www.w3.org/TR/HTML32.dtd">
 <html lang="en">
 <head>
    <title>SRFI 7: Feature-based program configuration language</title>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1" />
    <link rel="stylesheet" href="https://srfi.schemers.org/srfi.css" type="text/css" />
-   <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png">
+   <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png" />
 </head>
 <body>
 
@@ -16,11 +16,11 @@
 <h2>Status</h2>
 
 <p>This SRFI is currently in <em>final</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+7+at+srfi+dotschemers+dot+org">srfi-7@<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-7">archive</a>.</p>
-<UL>
-<LI>Received: 1999-05-12
-<LI>Draft: 1999-05-26--1999-07-26
-<LI>Final: 1999-08-19
-</UL>
+<ul>
+<li>Received: 1999-05-12
+</li><li>Draft: 1999-05-26--1999-07-26
+</li><li>Final: 1999-08-19
+</li></ul>
 
 <h2>Abstract</h2>
 
@@ -100,7 +100,7 @@ compiles a program into an executable file.
 given below.  The ordering of the clauses in a <code>&lt;program&gt;</code>
 determines the order of the forms in the resultant Scheme program.
 
-<p> In processing the <code>REQUIRES</code> and
+</p><p> In processing the <code>REQUIRES</code> and
 <code>FEATURE-COND</code> clauses in a <code>&lt;program&gt;</code>,
 an implementation should be consistent with some fixed set of present
 and absent features.  An implementation may analyze a <code>&lt;program&gt;</code>
@@ -123,13 +123,15 @@ same <code>&lt;program&gt;</code>.
   <dd>The forms in &lt;body&gt; are added to the program.</dd>
 
     <dt><code>(feature-cond &lt;feature-cond clause&gt;+)</code></dt>
-      <dd>The meaning of a <code>FEATURE-COND</code> clause is that of the
+      <dd>
+<p>
+        The meaning of a <code>FEATURE-COND</code> clause is that of the
 <code>&lt;program-clause&gt;</code>s in the first <code>&lt;feature-cond clause&gt;</code> whose
 <code>&lt;implementation-requirement&gt;</code> is satisfied by the implementation.
 If an <code>ELSE</code> clause is present it is used if and only if no preceding
 clause is satisfied; a <code>FEATURE-COND</code> with an
 <code>ELSE</code> clause is always satisfied.
-
+</p>
 <p>If no clause can be satisfied the <code>&lt;program&gt;</code> cannot be evaluated in
 the implementation.</p>
 
@@ -154,8 +156,9 @@ The meaning of the <code>&lt;implementation requirement&gt;</code>s is as follow
 
 	  <tr><td><code>(not x)</code></td><td>satisfied if <code>X</code> is not satisfied</td></tr>
 	</table>
-
+      </dd>
 </dl>
+
 
 <h2>Implementation</h2>
 
@@ -175,7 +178,6 @@ an (implementation-dependent) method for evaluating the forms returned by
 <code>PROCESS-PROGRAM</code>.
 </p>
 
-<p>
 <pre>
 (define (process-program program features)
   (call-with-current-continuation
@@ -262,7 +264,7 @@ an (implementation-dependent) method for evaluating the forms returned by
 			  '()
 			  (cons next (label)))))))
 	      (read-files (cdr filenames)))))
-</pre></p>
+</pre>
 
 <p>
 The second implementation is a <code>PROGRAM</code> macro that implements
@@ -272,7 +274,7 @@ Note that this implementation requires that <code>LOAD</code> use the current
 evaluation environment.
 </p>
 
-<p><pre>
+<pre>
 (define-syntax program
   (syntax-rules (requires files code feature-cond)
     ((program)
@@ -293,11 +295,12 @@ evaluation environment.
               more ...)
      (begin (cond-expand (requirement (program stuff ...)) ...)
             (program more ...)))))
-</pre></p>
+</pre>
 
 <h2>Copyright</h2>
-
+<p>
 Copyright (C) Richard Kelsey (1999). All Rights Reserved.
+</p>
 <p>
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -321,7 +324,7 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </p>
 
-    <hr>
+    <hr />
     <address>Editor: <a href="mailto:srfi minus editors at srfi dot schemers dot org">Mike Sperber</a></address>
 
 </body>
